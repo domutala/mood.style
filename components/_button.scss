@@ -1,0 +1,74 @@
+$btn-size: 36px;
+$btn-font-size: 14px;
+
+.btn {
+  border: 0;
+  outline: none;
+  height: #{$btn-size};
+  min-width: #{$btn-size};
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 0.3em;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 5px;
+  font-size: $btn-font-size;
+  text-decoration: none;
+
+  svg {
+    width: 16px;
+  }
+
+  @each $name, $color in $colors {
+    &.#{$name} {
+      background-color: $color;
+      color: get-text-color($color);
+    }
+  }
+
+  &.block {
+    display: flex;
+    width: 100%;
+  }
+
+  &.sm {
+    height: calc(#{$btn-size} * 0.8);
+    min-width: calc(#{$btn-size} * 0.8);
+    font-size: $btn-font-size * 0.72;
+    padding-left: 7px;
+    padding-right: 7px;
+    // --tw-shadow: currentColor;
+    // box-shadow: var(--tw-shadow) 0px 8px 24px;
+
+    svg {
+      width: calc((#{$btn-size}) * 0.4);
+    }
+  }
+
+  &.xs {
+    height: calc(#{$btn-size} * 0.55);
+    min-width: calc(#{$btn-size} * 0.55);
+    font-size: $btn-font-size * 65;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    svg {
+      width: calc((#{$btn-size}) * 0.25);
+    }
+  }
+
+  &.lg {
+    height: calc(#{$btn-size} * 1.5);
+    min-width: calc(#{$btn-size} * 1.5);
+    font-size: $btn-font-size * 1.2;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    svg {
+      width: calc(var(#{$btn-size}) * 0.7);
+    }
+  }
+}
